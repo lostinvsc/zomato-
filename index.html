@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato</title>
+    <!-- <link rel="stylesheet" href="zomato.css"> -->
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+header{
+    width:100vw;
+    height:514px;
+    background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+    background-position: center;
+    background-size: max(120vw,1100px);
+    text-align: center;
+}
+
+header nav{
+    display:flex;
+    width: min(906px,100vw);
+    margin:0px  auto;
+    justify-content: space-between;
+    color:white;
+}
+
+header nav span{
+    margin:0px 10px;
+    cursor: pointer;
+}
+
+header nav div:nth-child(2){
+    font-size: 17px;
+    font-weight: lighter;
+    margin:19px 0px;
+}
+header nav div:nth-child(1){
+    margin:19px 0px ;
+}
+
+.zomato img{
+    width:250px;
+    margin:40px 0px 0px 0px;
+}
+.zomato> div{
+    color:white;
+    font-size: 41px;
+    margin: 40px auto;
+}
+.search input{
+    width:min(757px,93vw);
+    height:50px;
+    margin:auto;
+    border-radius:4px;
+    border:5px solid white;
+    padding:0px 30px;
+}
+.search img{
+    height:25px;
+    width:20px;
+    transform:translateX(37px) translateY(8px);
+}
+
+/* .search .other_img{
+    width:100px;
+    transform:translateX(500px) translateY(-85px);
+    color:black;
+    font-size:15px;
+}
+.img2{
+    width:50px;
+    height:50px;
+    margin:-2px -10px;
+    position:relative;
+    z-index:-1;
+
+} */
+
+
+.first{
+    display:flex;
+    justify-content: center;
+    margin:50px 0px;
+    flex-wrap: wrap;
+    
+}
+.first .img1{
+margin:-10px 10px -10px 10px;
+
+}
+.first .img1 div{
+    width:355px;
+    height:69.5px;
+    display:flex;
+    
+    flex-direction: column;
+    padding:10px 0px 0px 15px;
+    border-radius:0px 0px 10px 10px;
+    background-color: white; 
+    transform:translateY(-85px) translateX(2px);
+}
+
+.first .img1 div h2{
+    margin:0px 0px 10px 0px;
+}
+
+
+.first .img1 img{
+    width:370px;
+    height:250px;
+    border-radius:10px; 
+    border:2px solid grey;
+    cursor: pointer;
+    
+}
+.first .img1:hover{
+    transform: scale(1.06);
+    transition:transform 0.4s ease-in-out 0ms;
+}
+
+.second{
+    display:flex;
+    width:min(1050px, 96vw);
+    flex-direction: column;
+margin:auto;
+flex-wrap: wrap;
+
+}
+.second h1{
+    font-size: 38px;
+    font-weight: 400;
+}
+.collections{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin:10px 0px ;
+   
+}
+.second .restrau{
+    display:flex;
+    margin:auto;
+}
+
+.second .restrau .img1{
+    width: min(270px,22vw);
+    height: min(314px,30vw);
+    border-radius: 9px;
+    margin:30px 5px;
+    background-image: url("https://b.zmtcdn.com/data/collections/293255cbfe49f4ebdb244c1bfc3a0f74_1691151613.jpg");
+    color:white;
+    background-size:cover;
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    filter: contrast(1.3) brightness(90%) ;
+    cursor: pointer;
+}
+.second .restrau .img2{
+    width: min(270px,22vw);
+    height: min(314px,30vw);
+    border-radius: 9px;
+    margin:30px 5px;
+    background-image: url("https://b.zmtcdn.com/data/collections/6d15bb3be793058440ed5e7006149c07_1691151825.jpg");
+    color:white;
+    background-size:cover;
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    filter: contrast(1.3) brightness(90%) ;
+    cursor: pointer;
+}
+.second .restrau .img3{
+    width: min(270px,22vw);
+    height: min(314px,30vw);
+    border-radius: 9px;
+    margin:30px 5px;
+    background-image: url("https://b.zmtcdn.com/data/collections/a1e31eb92bb9951aaf1750d88497adb4_1691151744.jpg");
+    color:white;
+    background-size:cover;
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    filter: contrast(1.3) brightness(90%) ;
+    cursor: pointer;
+}
+.second .restrau .img4{
+    width: min(270px,22vw);
+    height: min(314px,30vw);
+    border-radius: 9px;
+    margin:30px 5px;
+    background-image: url("https://b.zmtcdn.com/data/collections/1b3bd5bd6ff1e9e5176b81db369f1d62_1691152212.jpeg");
+    color:white;
+    background-size:cover;
+    display:flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    filter: contrast(1.3) brightness(90%);
+    cursor: pointer;
+
+}
+
+.second .restrau .img div {
+    margin: 5px 15px;
+    font-size: min(20px,2.5vw);
+    text-overflow:clip;
+    color:rgb(255, 255, 255);
+}
+
+.grid{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grid div{
+    width:min(352px, 30vw);
+    height:70px;
+    border:1px solid rgb(163, 163, 163);
+    border-radius: 5px;
+    margin:10px 6px;
+    padding:6px 20px;
+    box-sizing:border-box;
+    font-weight: 200;
+    box-shadow: 1px 1px 0.1px 0.1px rgb(153, 153, 153);
+    cursor: pointer;
+}
+.grid div h5{
+    margin:0px 0px 6px 0px;
+    font-size: 20px;
+    font-weight: 300;
+}
+.third{
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:100px 0px;
+    height:500px;
+    background-color: rgb(254, 249, 246);
+}
+
+.third .img img{
+height:300px ;
+transform: translateY(30px);
+
+
+}
+
+.third .getapp{
+    width:430px;
+}
+.enter{
+    display: flex;
+    column-gap: 10px;
+    margin:20px 0px;
+    flex-wrap: wrap;
+}
+.enter input{
+    width:min(400px,30vw);
+    height: 49px;
+    border-radius:5px;
+    border:1px solid grey;
+    box-sizing: border-box;
+    padding:0px 8px;
+    margin:0px 0px 5px 0px;
+}
+.enter div{
+    width:170px;
+    height: 49px;
+    border:2px solid rgb(252, 82, 82);
+    border-radius:5px;
+    background-color: rgb(252, 82, 82);
+    color:white;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.four{
+    display:flex;
+    width:min(1100px, 98vw);
+    flex-direction: column;
+margin:auto;
+}
+
+.four div{
+    width:min(1100px,100vw);
+    height:64px;
+    border:0.5px solid grey;
+    margin:14px auto;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding:0px 25px;
+    box-shadow: 1px 1px 0.1px 0.1px rgb(205, 205, 205);
+    font-size:20px;
+    color:rgb(81, 81, 81);
+    font-weight:300;
+    cursor: pointer;
+}
+
+.five{
+    display:flex;
+    width:100vw;
+    flex-direction: column;
+margin: 50px auto;
+height:400px;
+background-color:rgb(250, 250, 250);
+align-items: center;
+padding:50px 0px 0px 0px;
+
+}
+
+.five .img{
+    display:flex;
+   width: min(1100px, 97vw);
+    justify-content: space-between;
+    margin:0px 0px 30px 0px;
+    flex-wrap: wrap;
+}
+
+.five .button button{
+    width:130px;
+    height:40px;
+display:flex;
+justify-content: center;
+align-items: center;
+margin: 0px 0px 0px 20px;
+border-radius: 6px;
+background-color: #faebd700;
+border:1px solid grey;
+}
+.five .button{
+    display: flex;
+}
+
+
+.five div img{
+    width:150px;
+    height:28px;
+  
+}
+
+
+.info{
+    display:flex;
+    width: min(1100px, 98vw);
+     justify-content: space-between;
+}
+.info .one{
+    display:flex;
+    flex-direction: column;
+    row-gap: 7px;
+}
+
+.info .one img{
+    height:min(45px,11vw);
+    width:min(140px,20vw);
+    transform:translateX(-6px);
+}
+
+.five footer{
+    width: min(1100px, 98vw);
+    margin:85px 0px 0px 0px;
+    font-size: 13px;
+color: rgb(120, 120, 120);
+font-weight: 300;
+}
+
+.line{
+transform: translateY(-23px);
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div style="cursor: pointer;">Get the app</div>
+            <div>
+
+                <span>
+                    Investor Relations
+                </span>
+                <span>
+                    Add Restraunts
+                </span>
+                <span>
+                    Log in
+                </span>
+                <span>
+                    Sign up
+                </span>
+                </span>
+        </nav>
+
+        <div class="zomato">
+            <img src="https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png" alt="">
+            <div>
+                Discover the best food & drinks in Guwahati
+            </div>
+            <div class="search">
+                <!-- <img src="https://media4.giphy.com/media/de9m7Q8RPY8aes63aa/giphy.gif?cid=6c09b952twqxnszpuglsw19itmtpubodjb5niiy2o2vq9ume&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt=""> -->
+                <input type="search" placeholder="Guwahati">
+                <!-- <div class="other_img">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJtNTEyIDE2Ni00MS00Ni0yMTUgMTkwTDQxIDEyMCAwIDE2NmwyNTYgMjI2aDN6Ii8+PC9zdmc+" alt="">
+<img src="https://static.vecteezy.com/system/resources/previews/020/120/837/original/search-icon-simple-style-web-searching-background-symbol-search-brand-logo-design-element-search-t-shirt-printing-for-sticker-free-vector.jpg" class="img2" >
+|
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+
+    <section class="first">
+
+        <div class="img1">
+            <img src="https://b.zmtcdn.com/webFrontend/e5b8785c257af2a7f354f1addaf37e4e1647364814.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                alt="">
+            <div>
+                <h2>
+                    Order online
+                </h2>
+                Stay home and order to your doorstep
+            </div>
+        </div>
+        <div class="img1">
+            <img src="https://b.zmtcdn.com/webFrontend/d026b357feb0d63c997549f6398da8cc1647364915.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                alt="">
+            <div>
+                <h2>
+                    Dining
+                </h2>
+                View the city's favourite dining venues
+            </div>
+        </div>
+        <div class="img1">
+            <img src="https://b.zmtcdn.com/webFrontend/d9d80ef91cb552e3fdfadb3d4f4379761647365057.jpeg?output-format=webp&fit=around|402:360&crop=402:360;*,*"
+                alt="">
+            <div>
+                <h2>
+                    Nightlife and Clubs
+                </h2>
+                Explore the city's top nightlife outlets
+            </div>
+        </div>
+    </section>
+
+    <section class="second">
+
+
+        <h1>
+            Collections
+        </h1>
+
+        <div class="collections">
+            <div>
+                Explore curated lists of top restaurants, cafes, pubs, and bars in Guwahati, based on trends
+            </div>
+            <div style="color: red;">
+                All Collections in Guwahati >
+            </div>
+        </div>
+
+        <div class="restrau">
+            <div class="img1 img">
+                <div>
+                    7 Serene Rooftop Places
+
+                </div>
+                <div>
+                    7 places >
+                </div>
+            </div>
+            <div class="img2 img">
+                <div>
+                    7 Great Buffets
+
+                </div>
+                <div>
+                    7 places >
+                </div>
+            </div>
+            <div class="img3 img">
+                <div>
+                    9 Luxury Dining Places
+
+                </div>
+                <div>
+                    9 places >
+                </div>
+            </div>
+            <div class="img4 img">
+                <div>
+                    7 Pan-Asian Restraunts
+
+                </div>
+                <div>
+                    7 places >
+                </div>
+            </div>
+        </div>
+
+
+
+        <h1 style="font-weight: 200; color:rgb(55, 54, 54); margin: 50px 0px 30px 0px ;">
+            Popular localities in and around <b> Guwahati</b>
+        </h1>
+
+
+        <div class="grid">
+
+            <div>
+                <h5>
+                    Christian Basti
+                </h5>
+                164 places
+            </div>
+            <div>
+                <h5>
+                    Ulubari
+                </h5>
+                143 places
+            </div>
+            <div>
+                <h5>
+                    Zoo Tiniali
+                </h5>
+                181 places
+            </div>
+            <div>
+                <h5>
+                    Uzan Bazaar
+                </h5>
+                134 places
+            </div>
+            <div>
+                <h5>
+                    Six Mile
+                </h5>
+                134 places
+            </div>
+            <div>
+                <h5>
+                    Bhangagrh
+                </h5>
+                113 places
+            </div>
+            <div>
+                <h5>
+                    Khanapara
+                </h5>
+                78 places
+            </div>
+            <div>
+                <h5>
+                    Chandmari
+                </h5>
+                119 places
+            </div>
+            <div>
+                <h5 style="text-align: center; padding:13px 0px;">
+                    see more v
+                </h5>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="third">
+        <div class="img">
+            <img src="
+https://b.zmtcdn.com/data/o2_assets/f773629053b24263e69f601925790f301680693809.png" alt="">
+        </div>
+        <div class="getapp">
+            <h1 style="margin: 20px 0px; font-size: 40px; font-weight: 500;">
+                Get the Zomato app
+            </h1>
+            <div style="line-height: 35px;">
+
+                We will send you a link, open it on your phone to download the app
+            </div>
+
+
+
+            <br>
+
+            <label style="margin:0px 15px 0px 0px">
+                <input type="radio" name="contactMethod" value="email" class="email">
+                Email
+            </label>
+            <label>
+                <input type="radio" name="contactMethod" value="phone" class="phone">
+                Phone
+            </label>
+            <br>
+            <div class="enter">
+
+                <input type="email" placeholder="Email" class="input2">
+                <div >
+                    Share App Link
+                </div>
+            </div>
+            <div style="color: rgb(176, 176, 175); margin:40px 0px;">
+                Download app from
+            </div>
+
+            <div style="display: flex;">
+                <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png"
+                    style="width: min(150px,17vw); margin:0px 9px 0px 0px">
+                <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png"
+                    style="width: min(150px,17vw); margin:0px 9px 0px 0px">
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="four">
+        <h1 style="font-size: 30px; font-weight: 300; margin:5px 0px;">
+            Explore options near me
+        </h1>
+        <div>
+            Popular cuisines near me
+        </div>
+        <div>
+            Popular restraunt types near me
+        </div>
+        <div>
+            Cities we deliver to
+        </div>
+    </section>
+
+    <section class="five ">
+        <div class="img">
+
+            <img src="
+    https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&crop=198:42;*,*"
+                alt="">
+            <div class="button">
+                <button>
+                    🇮🇳 India
+                </button>
+                <button>
+                    English
+                </button>
+            </div>
+        </div>
+
+
+        <div class="info">
+            <div class="one">
+                <div style="font-weight: 400; font-size: 14.4px; ">
+                    ABOUT ZOMATO
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; margin:10px 0px 0px 0px; cursor: pointer;">
+                    Who We Are
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Blog
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Work With Us
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Investro Relations
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Report Fraud
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Press Kit
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Contact Us
+                </div>
+            </div>
+            <div class="one">
+                <div style="font-weight: 400; font-size: 14.4px; ">
+                    ZOOMAVERSE
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; margin:10px 0px 0px 0px; cursor: pointer;">
+                    Zomato
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Blinkit
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Feeding India
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Hyperpure
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Zomaland
+                </div>
+            </div>
+
+            <div class="one">
+
+                <div style="font-weight: 400; font-size: 14.4px; ">
+                    FOR RESTAURANTS
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; margin:10px 0px 0px 0px; cursor: pointer;">
+                    Partner With Us
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Apps For you
+                </div>
+            </div>
+            <div class="one">
+
+                <div style="font-weight: 400; font-size: 14.4px; ">
+                    LEARN MORE
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; margin:10px 0px 0px 0px; cursor: pointer;">
+                    Privacy
+                </div>
+
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Security
+                </div>
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Terms
+                </div>
+                <div style="font-size: 13.6px; color:grey; font-weight: 300; cursor: pointer;">
+                    Sitemap
+                </div>
+            </div>
+            <div class="one">
+
+                <div style="font-weight: 400; font-size: 14.4px; ">
+                    SOCIAL LINKS
+                </div>
+
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20"
+                        aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA">
+                        <path
+                            d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM7.0625 8.375H4.75V15.4375H7.0625V8.375ZM7.25 6.1875C7.25 5.5 6.75 5 5.9375 5C5.125 5 4.5625 5.5 4.5625 6.1875C4.5625 6.875 5.0625 7.4375 5.875 7.4375C6.6875 7.4375 7.25 6.875 7.25 6.1875ZM15.5 11.375C15.5 9.1875 14.3125 8.1875 12.8125 8.1875C11.5625 8.1875 11 8.875 10.6875 9.375V8.375H8.375C8.375 9.0625 8.375 15.4375 8.375 15.4375H10.6875V11.5C10.6875 11.3125 10.6875 11.0625 10.75 10.9375C10.9375 10.5 11.3125 10.0625 11.9375 10.0625C12.75 10.0625 13.125 10.6875 13.125 11.6875V15.4375H15.4375C15.5 15.4375 15.5 11.375 15.5 11.375Z">
+                        </path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20"
+                        aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA">
+                        <path
+                            d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM10.1875 5C8.8125 5 8.625 5 8.0625 5C7.5 5.0625 7.125 5.125 6.8125 5.25C6.5 5.375 6.1875 5.5625 5.875 5.875C5.5625 6.1875 5.375 6.4375 5.25 6.8125C5.125 7.125 5 7.5 5 8.0625C5 8.625 5 8.75 5 10.1875C5 11.625 5 11.8125 5.0625 12.375C5.0625 12.9375 5.1875 13.3125 5.3125 13.625C5.4375 13.9375 5.625 14.25 5.9375 14.5625C6.1875 14.8125 6.5 15 6.875 15.1875C7.1875 15.3125 7.5625 15.4375 8.125 15.4375C8.6875 15.4375 8.875 15.5 10.25 15.5C11.6875 15.5 11.875 15.5 12.4375 15.4375C13 15.375 13.375 15.3125 13.6875 15.1875C14 15.0625 14.3125 14.875 14.625 14.5625C14.9375 14.25 15.125 14 15.25 13.625C15.375 13.3125 15.5 12.875 15.5 12.375C15.5625 11.8125 15.5625 11.625 15.5625 10.1875C15.5625 8.75 15.5625 8.625 15.5 8.0625C15.5 7.5 15.375 7.125 15.25 6.8125C15.125 6.4375 14.9375 6.1875 14.625 5.875C14.375 5.625 14.0625 5.4375 13.6875 5.25C13.375 5.125 12.9375 5.0625 12.4375 5C11.8125 5 11.625 5 10.1875 5ZM9.75 5.9375C9.875 5.9375 10.0625 5.9375 10.1875 5.9375C11.5625 5.9375 11.75 5.9375 12.3125 5.9375C12.8125 5.9375 13.0625 6.0625 13.25 6.125C13.5 6.25 13.6875 6.375 13.875 6.5C14.0625 6.625 14.1875 6.8125 14.25 7.125C14.3125 7.3125 14.4375 7.5625 14.4375 8.0625C14.5 8.625 14.5 8.8125 14.5 10.1875C14.5 11.5625 14.5 11.75 14.4375 12.3125C14.4375 12.8125 14.3125 13.125 14.25 13.3125C14.1875 13.5625 14.0625 13.6875 13.875 13.9375C13.6875 14.125 13.5 14.1875 13.25 14.3125C13.0625 14.375 12.8125 14.5 12.3125 14.5C11.75 14.5 11.5625 14.5625 10.1875 14.5625C8.8125 14.5625 8.625 14.5625 8.0625 14.5C7.5625 14.5 7.3125 14.375 7.125 14.3125C6.875 14.1875 6.6875 14.125 6.5 13.9375C6.3125 13.75 6.1875 13.5625 6.125 13.3125C6.0625 13.125 6 12.875 5.9375 12.3125C5.9375 11.75 5.9375 11.625 5.9375 10.1875C5.9375 8.8125 5.9375 8.625 5.9375 8.0625C6 7.5625 6.0625 7.3125 6.125 7.125C6.25 6.875 6.375 6.6875 6.5 6.5C6.625 6.3125 6.875 6.1875 7.125 6.125C7.3125 6.0625 7.5625 5.9375 8.0625 5.9375C8.5625 5.9375 8.75 5.9375 9.75 5.9375ZM13 6.8125C12.6875 6.8125 12.375 7.0625 12.375 7.4375C12.375 7.8125 12.625 8.0625 13 8.0625C13.375 8.0625 13.625 7.8125 13.625 7.4375C13.625 7.0625 13.3125 6.8125 13 6.8125ZM10.1875 7.5C8.75 7.5 7.5 8.6875 7.5 10.1875C7.5 11.6875 8.6875 12.875 10.1875 12.875C11.6875 12.875 12.875 11.6875 12.875 10.1875C12.875 8.6875 11.6875 7.5 10.1875 7.5ZM10.1875 8.4375C11.125 8.4375 11.9375 9.1875 11.9375 10.1875C11.9375 11.1875 11.1875 11.9375 10.1875 11.9375C9.25 11.9375 8.4375 11.1875 8.4375 10.1875C8.4375 9.1875 9.25 8.4375 10.1875 8.4375Z">
+                        </path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20"
+                        aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA">
+                        <path
+                            d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM10.0625 8.125V8.5L9.6875 8.4375C8.3125 8.25 7.125 7.6875 6.125 6.6875L5.625 6.1875L5.5 6.5625C5.25 7.375 5.375 8.25 5.9375 8.8125C6.25 9.125 6.1875 9.1875 5.6875 9C5.5 8.9375 5.375 8.875 5.3125 8.9375C5.25 9 5.4375 9.6875 5.5625 9.9375C5.75 10.3125 6.1875 10.6875 6.5625 10.875L6.9375 11.0625H6.5C6.0625 11.0625 6.0625 11.0625 6.125 11.25C6.3125 11.75 6.875 12.25 7.5625 12.5L8 12.6875L7.625 12.9375C7 13.3125 6.3125 13.5 5.625 13.5C5.3125 13.5 5 13.5625 5 13.5625C5 13.625 5.9375 14.0625 6.4375 14.25C8.0625 14.75 9.9375 14.5 11.375 13.6875C12.375 13.0625 13.375 11.875 13.875 10.75C14.125 10.125 14.375 9 14.375 8.5C14.375 8.1875 14.4375 8.125 14.8125 7.6875C15.0625 7.4375 15.3125 7.1875 15.3125 7.0625C15.375 6.9375 15.375 6.9375 15 7.0625C14.375 7.3125 14.25 7.25 14.625 6.875C14.875 6.625 15.125 6.1875 15.125 6.0625C15.125 6.0625 15 6.0625 14.875 6.125C14.75 6.1875 14.4375 6.3125 14.1875 6.375L13.8125 6.5L13.5 6.25C13.3125 6.125 13 5.9375 12.875 5.9375C12.5 5.8125 11.9375 5.8125 11.5625 6C10.5625 6.25 10 7.1875 10.0625 8.125Z">
+                        </path>
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20"
+                        aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA">
+                        <path
+                            d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM15.1875 7.4375C15.0625 7 14.6875 6.625 14.25 6.5C13.4375 6.25 10.1875 6.25 10.1875 6.25C10.1875 6.25 6.9375 6.25 6.125 6.5C5.6875 6.625 5.3125 7 5.1875 7.4375C5 8.25 5 10 5 10C5 10 5 11.75 5.25 12.5625C5.375 13 5.75 13.375 6.1875 13.5C7 13.75 10.25 13.75 10.25 13.75C10.25 13.75 13.5 13.75 14.3125 13.5C14.75 13.375 15.125 13 15.25 12.5625C15.5 11.75 15.5 10 15.5 10C15.5 10 15.4375 8.25 15.1875 7.4375ZM9.25 11.75V8.5L11.875 10.125L9.25 11.75Z">
+                        </path>
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#1C1C1C" width="22" height="22" viewBox="0 0 20 20"
+                        aria-labelledby="icon-svg-title- icon-svg-desc-" role="img" class="sc-rbbb40-0 cvuzKA">
+                        <path
+                            d="M0 10C0 4.5 4.5 0 10 0C15.5 0 20 4.5 20 10C20 15.5 15.5 20 10 20C4.5 20 0 15.5 0 10ZM10.75 15.4375V10.1875H12.1875L12.375 8.375H10.75V7.5C10.75 7.0625 10.8125 6.8125 11.5 6.8125H12.375V5H10.9375C9.1875 5 8.625 5.875 8.625 7.3125V8.375H7.5V10.1875H8.5625V15.4375C8.5625 15.4375 10.75 15.4375 10.75 15.4375Z">
+                        </path>
+                    </svg>
+                </div>
+
+                <div>
+                    <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="">
+                </div>
+
+                <div>
+                    <img src="
+                    https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="">
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        </div>
+        <footer>
+            <hr class="line">
+
+            By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content
+            Policies. All trademarks are properties of their respective owners. 2008-2024 © Zomato™ Ltd. All rights
+            reserved.
+        </footer>
+    </section>
+
+
+    <script>
+        let e = document.querySelector(".email");
+        let p = document.querySelector(".phone");
+        let q = document.querySelector(".input2");
+        e.addEventListener("click", () => {
+            q.setAttribute("placeholder", "Email");
+
+        })
+        p.addEventListener("click", () => {
+            q.setAttribute("placeholder", "+ 91");
+
+        })
+
+        
+    </script>
+</body>
+
+</html>
